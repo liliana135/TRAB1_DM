@@ -39,7 +39,7 @@ class SignIn extends Component {
 
         // Find matching user
         const user = userList.find(x =>
-            x.username === this.state.username &&
+            x.email === this.state.email &&
             x.password === this.state.password);
 
         if (user !== undefined) {
@@ -57,11 +57,11 @@ class SignIn extends Component {
     render() {
         return (
             <View style={styles.layer2}>
-                <Text style={styles.header2}>Login</Text>
+                <Text style={styles.header}>Login</Text>
                 <TextInput
                     placeholder="E-mail"
                     style={styles.input}
-                    onChangeText={(value) => this.setStateFor("username", value)}
+                    onChangeText={(value) => this.setStateFor("email", value)}
                 />
                 <TextInput
                     placeholder="Password"
@@ -75,8 +75,6 @@ class SignIn extends Component {
                     style={styles.input}
                     onPress={this.verifyUser}
                 />
-                </View>
-                <View style={styles.buttonLogin}>
                 <Button
                     title="Entrar"
                     style={styles.input}

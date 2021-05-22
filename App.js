@@ -102,7 +102,7 @@ function NavTab(props) {
       >
         <Tab.Screen name="Estadia" component={HomeScreen} />
         <Tab.Screen name="Reservas" component={NavBlog} />
-        <Tab.Screen name="Login" component={ProfileScreen} />
+        <Tab.Screen name="Login" component={SignInScreen} />
         <Tab.Screen name="Definições" component={ContactsScreen} />
       </Tab.Navigator>
     </AuthContext.Provider>
