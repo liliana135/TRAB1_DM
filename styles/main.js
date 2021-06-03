@@ -46,6 +46,10 @@ const styles = StyleSheet.create({
         flexWrap: "wrap",
         alignContent: "space-between",
       },
+      space: {
+        width: 75, 
+        height: 20,
+      },
 });
 
 export default styles;

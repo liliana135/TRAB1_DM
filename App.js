@@ -8,6 +8,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 // Custom Components
 import PostsComponent from './components/Posts';
+
 import PostComponent from './components/Post';
 import CommentsComponent from './components/Comments';
 import HomeComponent from './components/Home';
@@ -15,6 +16,13 @@ import ProfileComponent from './components/Profile';
 import ContactsComponent from './components/Contacts';
 import SignInComponent from './components/SignIn';
 import { AuthContext } from './context/AuthContext'; // Import Context
+
+
+
+import SignUpComponent from './components/SignUp';
+
+
+
 
 // Screen Methods
 function HomeScreen({ navigation }) {
@@ -32,6 +40,11 @@ function PostsScreen({ navigation, route }) {
 function PostScreen({ navigation, route }) {
   return (
     <PostComponent navigation={navigation} route={route} />
+  );
+}
+function SignUpScreen({ navigation, route }) {
+  return (
+    <SignUpComponent navigation={navigation} route={route} />
   );
 }
 
@@ -90,20 +103,21 @@ function NavTab(props) {
         screenOptions={({ route }) => ({
           tabBarIcon: ({ color, size }) => {
             let iconName;
-            if (route.name === 'Home') { iconName = 'ios-home'; }
-            else if (route.name === 'Posts') { iconName = 'md-list'; }
-            else if (route.name === 'Profile') { iconName = 'ios-person'; }
-            else if (route.name === 'Contacts') { iconName = 'ios-send'; }
+            if (route.name === 'Estadia') { iconName = 'ios-search-outline' }
+            else if (route.name === 'Reservas') { iconName = 'ios-briefcase-outline'; }
+            else if (route.name === 'Definições') { iconName = 'ios-settings-outline'; }
+            else if (route.name === 'Registar') { iconName = 'person-outline'; }
 
             return <Ionicons name={iconName} size={size} color={color} />;
           },
         })}
-        tabBarOptions={{ activeTintColor: 'rebeccapurple', inactiveTintColor: 'gray' }}
+        tabBarOptions={{ activeTintColor: 'rebeccapurple', inactiveTintColor: 'black' }}
       >
         <Tab.Screen name="Estadia" component={HomeScreen} />
         <Tab.Screen name="Reservas" component={NavBlog} />
-        <Tab.Screen name="Login" component={SignInScreen} />
         <Tab.Screen name="Definições" component={ContactsScreen} />
+        <Tab.Screen name="Registar" component={SignUpScreen} />
+
       </Tab.Navigator>
     </AuthContext.Provider>
   );
@@ -148,7 +162,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   headerBG: {
-    backgroundColor: 'lime'
+    backgroundColor: 'rebeccapurple'
   },
   headerBold: {
     fontWeight: 'bold'

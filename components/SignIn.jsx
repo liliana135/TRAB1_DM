@@ -72,12 +72,13 @@ class SignIn extends Component {
                   <View style={styles.buttonLogin}>
                  <Button
                     title="Registar"
-                    style={styles.input}
+                    color= "black"
                     onPress={this.verifyUser}
                 />
+                <View style={styles.space} /> 
                 <Button
                     title="Entrar"
-                    style={styles.input}
+                    color= "black"
                     onPress={this.verifyUser}
                 />
                 </View>            

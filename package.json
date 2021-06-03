@@ -14,6 +14,7 @@
     "@react-navigation/stack": "^5.14.4",
     "expo": "~41.0.0",
     "expo-status-bar": "~1.0.4",
+    "firebase": "^8.6.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-41.0.0.tar.gz",
@@ -26,5 +27,18 @@
   "devDependencies": {
     "@babel/core": "^7.9.0"
   },
-  "private": true
+  "private": true,
+  "name": "trab1_dm",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liliana135/TRAB1_DM.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liliana135/TRAB1_DM/issues"
+  },
+  "homepage": "https://github.com/liliana135/TRAB1_DM#readme",
+  "description": ""
 }

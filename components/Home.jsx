@@ -4,7 +4,7 @@ import { StyleSheet, Text, Button, View, Image } from 'react-native';
 const Home = () => {
   return (
     <View style={styles.container}>
-      <Image style={styles.img} source={require('../assets/logo.png')} />
+      <Image style={styles.img} source={require('../assets/Logo.png')} />
     </View>
   );
 }
@@ -17,8 +17,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around'
   },
   img: {
-    width: 262,
-    height: 48
+    width: 300,
+    height: 300
 
   },
 }); 
