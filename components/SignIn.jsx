@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, TextInput, Text, Button } from 'react-native';
+import { View, TextInput, Text, Image, Button } from 'react-native';
 import styles from '../styles/main';
 
 // List of users
@@ -57,6 +57,7 @@ class SignIn extends Component {
     render() {
         return (
             <View style={styles.layer2}>
+                    <Image style={styles.img} source={require('../assets/Logo.png')} />
                 <Text style={styles.header}>Login</Text>
                 <TextInput
                     placeholder="E-mail"

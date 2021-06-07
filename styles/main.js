@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
         flex: 4,
         justifyContent: 'center',
         alignItems: 'center',
-        padding: 20,
-        backgroundColor: 'powderblue'
+        padding: 5,
+        backgroundColor: 'lavender'
     },
     layer3: {
         flex: 1,
@@ -38,17 +38,23 @@ const styles = StyleSheet.create({
     header: {
         fontSize: 30,
         fontWeight: 'bold',
-        marginBottom: 40,
-        marginTop: 40
+        marginBottom: 20,
+        marginTop: -25
     },
     buttonLogin: {
         flexDirection: "row",
         flexWrap: "wrap",
         alignContent: "space-between",
+        marginTop: 10
       },
-      space: {
+    space: {
         width: 75, 
         height: 20,
+    },
+    img: {
+        width: 300,
+        height: 250,
+    
       },
 });
 

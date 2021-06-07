@@ -7,62 +7,42 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 // Custom Components
-import PostsComponent from './components/Posts';
-
-import PostComponent from './components/Post';
-import CommentsComponent from './components/Comments';
-import HomeComponent from './components/Home';
-import ProfileComponent from './components/Profile';
-import ContactsComponent from './components/Contacts';
+import EstadiaComponent from './components/Estadia';
+import ReservasComponent from './components/Reservas';
+import DefinicoesComponent from './components/Definicoes';
 import SignInComponent from './components/SignIn';
 import { AuthContext } from './context/AuthContext'; // Import Context
 
 
 
 import SignUpComponent from './components/SignUp';
+import Estadia from './components/Estadia';
 
 
 
 
 // Screen Methods
-function HomeScreen({ navigation }) {
+function EstadiaScreen({ navigation }) {
   return (
-    <HomeComponent navigation={navigation} />
+    <EstadiaComponent navigation={navigation} />
   );
 }
 
-function PostsScreen({ navigation, route }) {
+function ReservasScreen({ navigation }) {
   return (
-    <PostsComponent navigation={navigation} route={route} />
+    <ReservasComponent navigation={navigation} />
   );
 }
 
-function PostScreen({ navigation, route }) {
+function DefinicoesScreen({ navigation }) {
   return (
-    <PostComponent navigation={navigation} route={route} />
-  );
-}
-function SignUpScreen({ navigation, route }) {
-  return (
-    <SignUpComponent navigation={navigation} route={route} />
+    <DefinicoesComponent navigation={navigation} />
   );
 }
 
-function CommentsScreen({ navigation }) {
+function SignUpScreen({ navigation}) {
   return (
-    <CommentsComponent navigation={navigation} />
-  );
-}
-
-function ProfileScreen({ navigation }) {
-  return (
-    <ProfileComponent navigation={navigation} />
-  );
-}
-
-function ContactsScreen({ navigation }) {
-  return (
-    <ContactsComponent navigation={navigation} />
+    <SignUpComponent navigation={navigation}/>
   );
 }
 
@@ -113,9 +93,9 @@ function NavTab(props) {
         })}
         tabBarOptions={{ activeTintColor: 'rebeccapurple', inactiveTintColor: 'black' }}
       >
-        <Tab.Screen name="Estadia" component={HomeScreen} />
-        <Tab.Screen name="Reservas" component={NavBlog} />
-        <Tab.Screen name="Definições" component={ContactsScreen} />
+        <Tab.Screen name="Estadia" component={NavEstadia} />
+        <Tab.Screen name="Reservas" component={NavReservas} />
+        <Tab.Screen name="Definições" component={NavDefinicoes} />
         <Tab.Screen name="Registar" component={SignUpScreen} />
 
       </Tab.Navigator>
@@ -125,7 +105,7 @@ function NavTab(props) {
 
 // Blog Stack Navigation
 const Stack = createStackNavigator();
-function NavBlog() {
+function NavEstadia() {
   return (
     <Stack.Navigator
       screenOptions={{
@@ -133,12 +113,40 @@ function NavBlog() {
         headerTintColor: '#eee',
         headerTitleStyle: styles.headerBold
       }}>
-      <Stack.Screen name="Home" component={PostsScreen} options={{ title: 'Blog' }} />
-      <Stack.Screen name="Post" component={PostScreen} />
-      <Stack.Screen name="Comments" component={CommentsScreen} />
+      <Stack.Screen name="Estadia" component={EstadiaScreen} options={{ title: 'Estadia' }} />
+    </Stack.Navigator>
+  
+  );
+}
+
+const Stack1 = createStackNavigator();
+function NavReservas() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: styles.headerBG,
+        headerTintColor: '#eee',
+        headerTitleStyle: styles.headerBold
+      }}>
+      <Stack.Screen name="Reservas" component={ReservasScreen} options={{ title: 'Reservas' }} />
     </Stack.Navigator>
   );
 }
+
+const Stack2 = createStackNavigator();
+function NavDefinicoes() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: styles.headerBG,
+        headerTintColor: '#eee',
+        headerTitleStyle: styles.headerBold
+      }}>
+      <Stack.Screen name="Definicoes" component={DefinicoesScreen} options={{ title: 'Definições' }} />
+    </Stack.Navigator>
+  );
+}
+
 class App extends Component {
   constructor(props) {
     super(props);
