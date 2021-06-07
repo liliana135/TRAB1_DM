@@ -8,6 +8,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: '#ecf0f1',
     },
+    container1: {
+        flex: 1,
+        backgroundColor: '#FFFFFF',
+        marginTop: 100,
+      },
     input: {
         width: 250,
         height: 44,

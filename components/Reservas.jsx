@@ -1,17 +1,33 @@
+import React, { Component } from 'react';
 import { View, TextInput, Text, Image, Button } from 'react-native';
 import styles from '../styles/main';
 
-const Reservas = () => {
-  return (
-    <View style={styles.container}>
-            <Text>Id: {id}</Text>
-            <Text>Title: {title}</Text>
-            <Button
-                title="Go to Comments"
-                onPress={() => props.navigation.navigate('Comments')}
-            />
-            <Button title="Go back" onPress={() => props.navigation.goBack()} />
-        </View>
-  );
+export default class SignUp extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+
+      <View style={styles.layer2}>
+        <TextInput
+          placeholder={'Name'}
+          style={styles.input}
+        />
+        <TextInput
+          placeholder={'Email'}
+          style={styles.input}
+        />
+        <TextInput
+          placeholder={'Password'}
+          style={styles.input}
+        />
+        <Button
+          title={'Registar'} 
+          color= "black"
+        />
+      </View>
+    );
+  }
 }
-export default Reservas;
