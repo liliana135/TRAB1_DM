@@ -12,11 +12,15 @@ import ReservasComponent from './components/Reservas';
 import DefinicoesComponent from './components/Definicoes';
 import SignInComponent from './components/SignIn';
 import { AuthContext } from './context/AuthContext'; // Import Context
+import DataComponent from './components/Data';
+import PesquisaComponent from './components/Pesquisa';
+
 
 
 
 import SignUpComponent from './components/SignUp';
-import Estadia from './components/Estadia';
+
+
 
 
 
@@ -25,6 +29,18 @@ import Estadia from './components/Estadia';
 function EstadiaScreen({ navigation }) {
   return (
     <EstadiaComponent navigation={navigation} />
+  );
+}
+
+function PesquisaScreen({ navigation }) {
+  return (
+    <PesquisaComponent navigation={navigation} />
+  );
+}
+
+function DataScreen({ navigation }) {
+  return (
+    <DataComponent navigation={navigation} />
   );
 }
 
@@ -66,7 +82,10 @@ function NavAuth(logged) {
         headerTitleStyle: styles.headerBold
       }}
     >
+      <StackAuth.Screen name="Pesquisa" component={PesquisaScreen} />
+      <StackAuth.Screen name="Data" component={DataScreen} />
       <StackAuth.Screen name="SignIn" component={SignInScreen} />
+      <StackAuth.Screen name="SignUp" component={SignUpScreen} />
       <StackAuth.Screen name="App" component={NavTab} />
     </StackAuth.Navigator>
   );
@@ -86,7 +105,6 @@ function NavTab(props) {
             if (route.name === 'Estadia') { iconName = 'ios-search-outline' }
             else if (route.name === 'Reservas') { iconName = 'ios-briefcase-outline'; }
             else if (route.name === 'Definições') { iconName = 'ios-settings-outline'; }
-            else if (route.name === 'Registar') { iconName = 'person-outline'; }
 
             return <Ionicons name={iconName} size={size} color={color} />;
           },
@@ -96,7 +114,6 @@ function NavTab(props) {
         <Tab.Screen name="Estadia" component={NavEstadia} />
         <Tab.Screen name="Reservas" component={NavReservas} />
         <Tab.Screen name="Definições" component={NavDefinicoes} />
-        <Tab.Screen name="Registar" component={SignUpScreen} />
 
       </Tab.Navigator>
     </AuthContext.Provider>

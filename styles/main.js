@@ -61,6 +61,19 @@ const styles = StyleSheet.create({
         height: 250,
     
       },
+    goBack: {
+        width: 350,
+        height: 100,
+        marginBottom: 10,
+        fontSize: 30,
+    },
+    corner: {
+        width: 350,
+        height: 100,
+        marginBottom: 10,
+        fontSize: 30,
+
+    }
 });
 
 export default styles;

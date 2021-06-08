@@ -1,27 +1,31 @@
 import React, { Component } from 'react';
-import { Text, Button, TextInput, View, TouchableHighlight } from 'react-native';
+import { View, TextInput, Text, Image, Button, Alert } from 'react-native';
 import styles from '../styles/main';
 
-export default class SignUp extends Component {
+class Pesquisa extends Component {
   constructor(props) {
     super(props);
   }
 
-  Sign = async () => {
-    this.props.navigation.navigate("SignIn")
-  }
+  createTwoButtonAlert () {
+    Alert.alert(
+      "Aviso!",
+      "Reserva Concluída",
+      [
+        {
+          text: "Ligar",
+          onPress: () => console.log("Cancel Pressed")
+        },
+        { text: "OK", onPress: () => console.log("OK Pressed"),
+        style: 'cancel', }
+      ]
+    );
+}
 
   render() {
     return (
 
       <View style={styles.layer2}>
-        <TouchableHighlight onPress={this.Sign} underlayColor="lavender">
-            <View >
-                <Text style={styles.corner} >{'<'}</Text>
-            </View>
-          </TouchableHighlight>
-        <Text style={styles.header}>Sign Up</Text>
-        
         <TextInput
           placeholder={'Name'}
           style={styles.input}
@@ -35,10 +39,12 @@ export default class SignUp extends Component {
           style={styles.input}
         />
         <Button
-          title={'Registar'} 
+          title={'Reservar'} 
           color= "black"
+          onPress={this.createTwoButtonAlert}
         />
       </View>
     );
   }
 }
+export default Pesquisa;

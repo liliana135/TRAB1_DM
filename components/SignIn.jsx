@@ -54,6 +54,10 @@ class SignIn extends Component {
         }
     }
 
+    Register = async () => {
+        this.props.navigation.navigate("SignUp")
+      }
+
     render() {
         return (
             <View style={styles.layer2}>
@@ -74,7 +78,7 @@ class SignIn extends Component {
                  <Button
                     title="Registar"
                     color= "black"
-                    onPress={this.verifyUser}
+                    onPress={this.Register}
                 />
                 <View style={styles.space} /> 
                 <Button
