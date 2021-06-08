@@ -9,8 +9,8 @@ class Pesquisa extends Component {
 
   createTwoButtonAlert () {
     Alert.alert(
-      "Aviso!",
       "Reserva Concluída",
+      "Caso deseje cancelar reserva, ligue para o hotel",
       [
         {
           text: "Ligar",
